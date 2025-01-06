@@ -1,42 +1,167 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@font-face {
+  font-family: 'Exo2';
+  src: url('./src/assets/fonts/Exo2-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+@font-face {
+  font-family: 'Exo2';
+  src: url('./src/assets/fonts/Exo2-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: Italic;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@font-face {
+  font-family: 'Exo2';
+  src: url('./src/assets/fonts/Exo2-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+@font-face {
+  font-family: 'Exo2';
+  src: url('./src/assets/fonts/Exo2-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
 }
 
-.card {
-  padding: 2em;
+@font-face {
+  font-family: 'Exo2';
+  src: url('./src/assets/fonts/Exo2-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
 }
 
-.read-the-docs {
-  color: #888;
+@font-face {
+  font-family: 'Exo2';
+  src: url('./src/assets/fonts/Exo2-ExtraBoldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url('./src/assets/fonts/Exo2-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url('./src/assets/fonts/Exo2-ExtraLightItalic.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url('./src/assets/fonts/Exo2-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url('./src/assets/fonts/Exo2-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url('./src/assets/fonts/Exo2-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url('./src/assets/fonts/Exo2-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url('./src/assets/fonts/Exo2-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url('./src/assets/fonts/Exo2-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url('./src/assets/fonts/Exo2-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url('./src/assets/fonts/Exo2-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url('./src/assets/fonts/Exo2-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url('./src/assets/fonts/Exo2-ThinItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('./src/assets/fonts/Orbitron-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('./src/assets/fonts/Orbitron-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('./src/assets/fonts/Orbitron-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('./src/assets/fonts/Orbitron-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('./src/assets/fonts/Orbitron-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('./src/assets/fonts/Orbitron-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
 }
