@@ -27,25 +27,24 @@ const HomePage = () => {
           alt="Skynetrix Logo"
           className="w-64 md:w-96 mb-6"
         />
-        <h1 className="text-5xl md:text-7xl font-sans font-black text-neon-Green mb-6">
-          Welcome to the Future of Automotive
+        <h1 className="text-4xl md:text-6xl font-sans font-black text-neon-Green mb-6 max-w-7xl mx-auto">
+        Shift Gears into the Future with Unified Automotive Solutions.
         </h1>
-        <p className="text-lg md:text-2xl max-w-4xl mx-auto mb-8">
-          Skynetrix redefines automotive service management with cutting-edge
-          tools for OBD2 connectivity, Shopware integration, and seamless customer engagement.
+        <p className="text-lg md:text-2xl max-w-4xl mx-auto mb-8 text-dark-text">
+        Innovative Solutions Designed to Streamline, Retain, and Grow
         </p>
         <Link
-          to="/beta-signup"
-          className="px-10 py-4 bg-neon-blue text-dark-text font-bold text-lg rounded-full hover:shadow-neon-blue transition duration-300 animate-pulse"
+          to="/exclusive-access"
+          className="px-10 py-4 text-dark-text font-bold text-lg rounded-full hover:shadow-neon-green transition duration-300 animate-pulse hover:animate-none"
         >
-          Join the Beta Now
+          Experience Exclusive Access
         </Link>
       </section>
 
       {/* Features Section */}
       <section className="py-16 bg-light-muted dark:bg-dark-muted">
         <div className="container mx-auto">
-          <h2 className="text-4xl font-orbitron text-center text-neon-purple mb-12">
+          <h2 className="text-4xl font-orbitron text-center text-dark-text mb-12">
             Why Choose Skynetrix?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -62,14 +61,14 @@ const HomePage = () => {
                 description:
                   'Easily manage appointments, service history, and customer data across shops.',
                 icon: '/path-to-shopware-icon.png',
-                hover: 'hover:shadow-neon-blue',
+                hover: 'hover:shadow-neon-green',
               },
               {
                 title: 'Automated Service Reminders',
                 description:
                   'Engage customers with personalized, proactive reminders for their vehicles.',
                 icon: '/path-to-reminder-icon.png',
-                hover: 'hover:shadow-neon-pink',
+                hover: 'hover:shadow-neon-green',
               },
             ].map((feature, index) => (
               <div
