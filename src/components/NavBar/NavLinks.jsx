@@ -4,7 +4,7 @@ const NavLinks = ({ onClick }) => {
   const links = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
-    { name: '', path: '/login'}
+    { name: 'Login', path: '/login'}
     // Add more links here as needed
   ];
 
