@@ -6,6 +6,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/Terms';
 import Navbar from './components/NavBar/Navbar';
 import NotFound from './pages/NotFound';
+import Footer from './components/Footer/Footer';
 
 
 const App = () => (
@@ -18,6 +19,7 @@ const App = () => (
       <Route path="/terms" element={<TermsOfService />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
+    <Footer />
   </Router>
 );
 

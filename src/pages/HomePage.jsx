@@ -1,89 +1,102 @@
-import { Link } from 'react-router-dom';
-import Particles from 'react-tsparticles';
-import Logo from '../assets/Logo.png?react'
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import DarkBackgroundlogo from "../assets/LogoDarkBackground.png"; // Dark mode logo
+import LightBackgroundlogo from "../assets/LogoLightBackground.png"; // Light mode logo
 
 const HomePage = () => {
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setTheme(
+        document.documentElement.classList.contains("dark") ? "dark" : "light"
+      );
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="bg-light-background dark:bg-dark-background text-light-text dark:text-dark-text font-sans">
+    <div className="homepage bg-light-primary-bg dark:bg-dark-primary-bg text-black dark:text-white">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center text-center bg-gradient-to-br from-light-primary to-light-accent dark:from-dark-primary dark:to-dark-accent animate-backgroundShift overflow-hidden">
-        {/* Animated Particle Background */}
-        <Particles
-          id="tsparticles"
-          options={{
-            particles: {
-              number: { value: 100 },
-              color: { value: ['#00FFB2', '#4D00FF'] },
-              shape: { type: 'circle' },
-              opacity: { value: 0.8 },
-              size: { value: 5 },
-              line_linked: { enable: true, distance: 150, color: '#6A10A8' },
-              move: { enable: true, speed: 2 },
-            },
-          }}
-        />
+      <section className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
+        {/* Logo that switches based on theme */}
         <img
-          src={Logo}
+          src={theme === "dark" ? DarkBackgroundlogo : LightBackgroundlogo}
           alt="Skynetrix Logo"
-          className="w-64 md:w-96 mb-6"
+          className="w-64 md:w-96 mb-6 transition-all duration-300"
         />
-        <h1 className="text-4xl md:text-6xl font-sans font-black text-neon-Green mb-6 max-w-7xl mx-auto">
-        Shift Gears into the Future with Unified Automotive Solutions.
-        </h1>
-        <p className="text-lg md:text-2xl max-w-4xl mx-auto mb-8 text-dark-text">
-        Innovative Solutions Designed to Streamline, Retain, and Grow
-        </p>
+
+        {/* Call to Action Button */}
         <Link
-          to="/exclusive-access"
-          className="px-10 py-4 text-dark-text font-bold text-lg rounded-full hover:shadow-neon-green transition duration-300 animate-pulse hover:animate-none"
+          to="/founders-access"
+          className="homepage-button px-10 py-4 font-bold text-lg rounded-full hover:shadow-neon-teal transition duration-300 animate-pulse hover:animate-none"
         >
-          Experience Exclusive Access
+          Experience Founders Access
         </Link>
       </section>
 
-      {/* Features Section */}
-      <section className="py-16 bg-light-muted dark:bg-dark-muted">
+      {/* About Skynetrix Section */}
+      <section className="py-16 text-center">
         <div className="container mx-auto">
-          <h2 className="text-4xl font-orbitron text-center text-dark-text mb-12">
-            Why Choose Skynetrix?
+          <h2 className="text-3xl md:text-5xl font-bold text-light-purple dark:text-light-teal mb-6">
+            What is Skynetrix?
+          </h2>
+          <p className="text-lg max-w-3xl mx-auto">
+            Skynetrix is a **customer engagement and service retention
+            platform** designed for **independent auto shops and small
+            dealerships**. It provides **AI-powered recommendations, automated
+            follow-ups, and revenue insights** to keep your shop running at full
+            speed.
+          </p>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-16 bg-light-teal dark:bg-dark-purple text-center">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-white mb-12">
+            How Skynetrix Helps Your Shop
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: 'OBD2 Connectivity',
+                title: "Automated Customer Follow-Ups",
                 description:
-                  'Track real-time mileage and diagnostic data for smarter service recommendations.',
-                icon: '/path-to-obd-icon.png',
-                hover: 'hover:shadow-neon-green',
+                  "Send service reminders, follow-ups, and offers automatically to keep customers engaged.",
+                icon: "/path-to-reminder-icon.png",
               },
               {
-                title: 'Shopware Integration',
+                title: "Service History & Recommendations",
                 description:
-                  'Easily manage appointments, service history, and customer data across shops.',
-                icon: '/path-to-shopware-icon.png',
-                hover: 'hover:shadow-neon-green',
+                  "Let customers view past services and recommended maintenance right from their portal.",
+                icon: "/path-to-history-icon.png",
               },
               {
-                title: 'Automated Service Reminders',
+                title: "Shop Insights & Performance Tracking",
                 description:
-                  'Engage customers with personalized, proactive reminders for their vehicles.',
-                icon: '/path-to-reminder-icon.png',
-                hover: 'hover:shadow-neon-green',
+                  "See revenue from completed jobs, track lost revenue from declined work, and find your most valuable customers.",
+                icon: "/path-to-analytics-icon.png",
               },
             ].map((feature, index) => (
               <div
                 key={index}
-                className={`p-6 bg-light-background dark:bg-dark-background shadow-lg rounded-xl transition-transform transform hover:scale-105 ${feature.hover}`}
+                className="p-6 bg-light-primary-bg dark:bg-dark-primary-bg shadow-lg rounded-xl transition-transform transform hover:scale-105"
               >
                 <img
                   src={feature.icon}
                   alt={feature.title}
                   className="w-16 h-16 mx-auto mb-4"
                 />
-                <h3 className="text-xl font-orbitron text-center mb-4">
+                <h3 className="text-xl font-bold text-light-purple dark:text-light-teal mb-4">
                   {feature.title}
                 </h3>
-                <p className="text-center text-light-text dark:text-dark-text">
+                <p className="text-dark-purple dark:text-light-purple">
                   {feature.description}
                 </p>
               </div>
@@ -92,76 +105,33 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Interactive Showcase Section */}
-      <section className="py-16 bg-gradient-to-br from-light-secondary to-light-accent dark:from-dark-secondary dark:to-dark-accent text-center animate-backgroundShift">
+      {/* Interactive Showcase / Demo */}
+      <section className="py-16 text-center">
         <div className="container mx-auto">
-          <h2 className="text-4xl font-orbitron text-neon-blue mb-8">
+          <h2 className="text-3xl font-bold text-light-purple dark:text-light-teal mb-6">
             See Skynetrix in Action
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="p-6 bg-light-muted dark:bg-dark-muted shadow-lg rounded-xl">
-              <img
-                src="/path-to-dashboard-image.png"
-                alt="Dashboard"
-                className="rounded-lg mb-6"
-              />
-              <h3 className="text-2xl font-orbitron text-neon-purple mb-4">
-                Powerful Dashboards
-              </h3>
-              <p>
-                Get real-time insights into shop performance, customer
-                engagement, and service history.
-              </p>
-            </div>
-            <div className="p-6 bg-light-muted dark:bg-dark-muted shadow-lg rounded-xl">
-              <img
-                src="/path-to-obd-image.png"
-                alt="OBD Device"
-                className="rounded-lg mb-6"
-              />
-              <h3 className="text-2xl font-orbitron text-neon-green mb-4">
-                OBD2 Connectivity
-              </h3>
-              <p>
-                Connect vehicles directly to Skynetrix for accurate mileage
-                tracking and better service recommendations.
-              </p>
-            </div>
-          </div>
+          <p className="text-lg max-w-3xl mx-auto mb-6">
+            Explore how Skynetrix enhances **shop management, customer
+            retention, and service optimization**.
+          </p>
+          <img
+            src="/path-to-dashboard-screenshot.png"
+            alt="Skynetrix Dashboard"
+            className="mx-auto rounded-lg shadow-lg"
+          />
         </div>
       </section>
 
-      {/* Call to Action Section */}
-      <section className="py-16 bg-dark-accent text-center">
-        <h2 className="text-4xl font-orbitron text-neon-pink mb-6">
-          Ready to Elevate Your Shop?
-        </h2>
-        <p className="text-lg text-dark-text mb-8">
-          Be among the first to experience Skynetrix. Join the beta program for
-          free and revolutionize your shop management.
-        </p>
+      {/* Call to Action */}
+      <section className="py-16 text-center">
         <Link
-          to="/beta-signup"
-          className="px-10 py-4 bg-neon-green text-dark-text font-bold text-lg rounded-full hover:shadow-neon-green transition duration-300"
+          to="/founders-access"
+          className="px-10 py-4 font-bold text-lg rounded-full bg-light-purple dark:bg-light-teal text-white hover:shadow-neon-teal transition duration-300"
         >
-          Sign Up Now
+          Join the Founder's Club
         </Link>
       </section>
-
-      {/* Footer Section */}
-      <footer className="py-8 bg-dark-muted text-center">
-        <p className="text-sm text-light-muted">
-          © 2025 Skynetrix. All Rights Reserved.
-        </p>
-        <div className="flex justify-center gap-4 mt-4">
-          <Link to="/privacy-policy" className="hover:underline">
-            Privacy Policy
-          </Link>
-          <Link to="/terms" className="hover:underline">
-            Terms of Service
-          </Link>
-        </div>
-      </footer>
     </div>
   );
 };
