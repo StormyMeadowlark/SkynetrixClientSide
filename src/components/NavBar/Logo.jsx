@@ -1,30 +1,22 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import DarkBackgroundlogo from "../../assets/LogoDarkBackground.png"; // Dark mode logo
-import LightBackgroundlogo from "../../assets/LogoLightBackground.png"; // Light mode logo
+import { useTheme } from "../../context/themeProvider"; // Import useTheme Hook
+import DarkBackgroundLogo from "../../assets/LogoDarkBackground.png";
+import LightBackgroundLogo from "../../assets/LogoLightBackground.png";
 
 const Logo = () => {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  const { theme } = useTheme(); // Get theme from context
+  const [logo, setLogo] = useState(theme === "dark" ? DarkBackgroundLogo : LightBackgroundLogo);
 
+  // Update the logo dynamically when the theme changes
   useEffect(() => {
-    const observer = new MutationObserver(() => {
-      setTheme(
-        document.documentElement.classList.contains("dark") ? "dark" : "light"
-      );
-    });
-
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["class"],
-    });
-
-    return () => observer.disconnect();
-  }, []);
+    setLogo(theme === "dark" ? DarkBackgroundLogo : LightBackgroundLogo);
+  }, [theme]);
 
   return (
     <Link to="/" className="flex items-center">
       <img
-        src={theme === "dark" ? DarkBackgroundlogo : LightBackgroundlogo}
+        src={logo} // Uses state variable that updates when theme changes
         alt="Skynetrix Logo"
         className="h-12 w-auto transition-all duration-300"
       />
@@ -33,3 +25,5 @@ const Logo = () => {
 };
 
 export default Logo;
+
+

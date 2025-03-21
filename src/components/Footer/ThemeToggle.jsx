@@ -1,31 +1,12 @@
-import { useState, useEffect } from "react";
+import { useTheme } from "../../context/themeProvider"; // <-- this one
 
 const ThemeToggle = () => {
-  const storedTheme = localStorage.getItem("theme");
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const defaultTheme = storedTheme || (prefersDark ? "dark" : "light");
-
-  const [theme, setTheme] = useState(defaultTheme);
-
-  useEffect(() => {
-    const root = document.documentElement;
-
-    if (theme === "dark") {
-      root.classList.add("dark");
-    } else {
-      root.classList.remove("dark");
-    }
-
-    localStorage.setItem("theme", theme);
-  }, [theme]);
-
-  const toggleTheme = () =>
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <button
       onClick={toggleTheme}
-      className="text-black dark:text-white transition duration-300 hover:font-black"
+      className="hover:font-bold text-black dark:text-white transition"
     >
       {theme === "light" ? "Activate Dark Mode" : "Activate Light Mode"}
     </button>

@@ -29,6 +29,12 @@ const NavLinks = ({ onClick }) => {
           </Link>
         </li>
       ))}
+            <Link
+        to="/founders-access"
+        className="px-2 font-bold rounded-full animate-pulse hover:animate-hoverGlow hover:shadow-neon-teal transition duration-300 dark:text-white"
+      >
+        Join the Founder&apos;s Club
+      </Link>
     </ul>
   );
 };
