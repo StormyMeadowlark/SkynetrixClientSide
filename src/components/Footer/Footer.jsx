@@ -21,7 +21,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-light-primary-bg dark:bg-dark-primary-bg text-black dark:text-white pt-10">
+    <footer className="bg-white dark:bg-purple text-black dark:text-white pt-10">
       <div className="container mx-auto px-4 md:px-8">
         {/* Main Footer Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pb-6 border-b border-gray-300 dark:border-gray-700">
@@ -106,7 +106,7 @@ const Footer = () => {
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="p-2 rounded-md bg-gray-200 dark:bg-gray-700 text-black dark:text-white w-full"
+                className="p-2 rounded-md bg-light-primary-bg dark:bg-gray-700 text-black dark:text-white outline outline-1 outline-dark-purple w-full"
                 required
               />
               <button

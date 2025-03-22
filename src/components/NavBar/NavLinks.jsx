@@ -5,8 +5,10 @@ const NavLinks = ({ onClick }) => {
 
   const links = [
     { name: "Home", path: "/" },
+    { name: "Features", path: "/features"},
     { name: "About", path: "/about" },
     { name: "Login", path: "/login" },
+    
   ];
 
   return (
