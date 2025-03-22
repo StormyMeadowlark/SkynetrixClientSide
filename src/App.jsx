@@ -11,6 +11,7 @@ import LoginPage from './pages/LoginPage';
 import FoundersAccess from './pages/FoundersAccess';
 import FoundersAccessRegister from './pages/FoundingMembersForm';
 import FeaturesPage from './pages/FeaturesPage';
+import PricingPage from './pages/PricingPage';
 
 
 
@@ -21,6 +22,7 @@ const App = () => (
       <Route path="/" element={<HomePage />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/features" element={<FeaturesPage />} />
+      <Route path="/pricing" element={<PricingPage />} />
       <Route path="/founders-access" element={<FoundersAccess />} />
       <Route path="/founding-members-registration" element={<FoundersAccessRegister />} />
       <Route path="/login" element={<LoginPage />} />
