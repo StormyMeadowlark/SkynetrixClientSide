@@ -23,7 +23,7 @@ const NotFound = () => {
 
       <Link
         to="/"
-        className="px-8 py-4 font-bold text-lg rounded-full bg-light-purple dark:bg-light-teal text-white hover:shadow-neon-teal transition duration-300"
+        className="px-8 py-4 font-bold text-lg rounded-full bg-light-purple dark:bg-light-teal text-white dark:text-dark-primary-bg hover:shadow-neon-teal transition duration-300"
       >
         Back to Home
       </Link>

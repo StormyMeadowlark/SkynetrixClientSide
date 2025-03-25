@@ -18,7 +18,8 @@ const PricingPage = () => {
     {
       name: "Founder's Access",
       range: "1–10",
-      color: "bg-light-purple dark:bg-light-teal",
+      color:
+        "bg-light-purple dark:bg-light-teal dark:text-purple dark:hover:bg-teal dark:hover:text-gray animate-hoverGlow hover:animate hover:animate-pulse dark:hover:animate-none",
       perks: [
         "Lifetime discount on all microservices",
         "Direct roadmap input",
@@ -29,7 +30,8 @@ const PricingPage = () => {
     {
       name: "Apex Access",
       range: "11–25",
-      color: "bg-[#5ED4CF] dark:bg-[#55129E]",
+      color:
+        "bg-dark-purple dark:bg-light-teal dark:text-purple dark:hover:bg-teal dark:hover:text-gray hover:animate hover:animate-pulse dark:hover:animate-none",
       perks: [
         "Discounted pricing for 12 months",
         "Early feature testing",
@@ -39,7 +41,8 @@ const PricingPage = () => {
     {
       name: "Full Throttle Access",
       range: "26–50",
-      color: "bg-[#20B2AA] dark:bg-[#2C005C]",
+      color:
+        "bg-purple dark:bg-light-teal dark:text-purple dark:hover:bg-teal dark:hover:text-gray hover:animate hover:animate-pulse dark:hover:animate-none",
       perks: [
         "6 months discounted pricing",
         "First look at new features",
@@ -87,7 +90,7 @@ const PricingPage = () => {
           </p>
           <Link
             to="/founders-access"
-            className="inline-block px-10 py-4 rounded-full text-white bg-light-purple dark:bg-light-teal font-bold hover:shadow-neon-teal transition duration-300"
+            className="mt-6 px-10 py-4 font-bold text-lg rounded-full bg-white dark:bg-purple animate-pulse hover:animate-hoverGlow hover:shadow-neon-teal transition duration-300"
           >
             Reserve Your Spot
           </Link>

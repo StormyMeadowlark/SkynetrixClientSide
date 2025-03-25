@@ -63,7 +63,7 @@ const FeaturesPage = () => {
               </ul>
             </div>
           </div>
-          <section className="py-20 px-6 bg-[#f5f5f5] dark:bg-[#2A054A]">
+          <section className="py-20 px-6">
             <div className="max-w-6xl mx-auto text-center">
               <h2 className="text-3xl font-bold text-light-purple dark:text-light-teal mb-8">
                 Business Insights
@@ -78,7 +78,7 @@ const FeaturesPage = () => {
                   <h3 className="text-xl font-semibold mb-2 text-light-purple dark:text-light-teal">
                     Real-Time Revenue Tracking
                   </h3>
-                  <p className="text-sm text-dark-purple dark:text-light-purple">
+                  <p className="text-sm text-dark-purple dark:text-gray">
                     Skynetrix calculates completed, declined, and recurring
                     revenue—so you know what’s working and what isn’t.
                   </p>
@@ -87,7 +87,7 @@ const FeaturesPage = () => {
                   <h3 className="text-xl font-semibold mb-2 text-light-purple dark:text-light-teal">
                     Top Customer Insights
                   </h3>
-                  <p className="text-sm text-dark-purple dark:text-light-purple">
+                  <p className="text-sm text-dark-purple dark:text-gray">
                     Identify your most valuable customers, most loyal returners,
                     and biggest lost opportunities by job type.
                   </p>
@@ -96,7 +96,7 @@ const FeaturesPage = () => {
                   <h3 className="text-xl font-semibold mb-2 text-light-purple dark:text-light-teal">
                     Smart Recommendations
                   </h3>
-                  <p className="text-sm text-dark-purple dark:text-light-purple">
+                  <p className="text-sm text-dark-purple dark:text-gray">
                     Get automated suggestions for improvements—like better
                     timing for follow-ups or targeting seasonal services.
                   </p>
@@ -104,12 +104,12 @@ const FeaturesPage = () => {
               </div>
             </div>
           </section>
-          <div className="mt-16 bg-[#f7faff] dark:bg-[#1B022F] p-10 rounded-2xl shadow-inner">
+          <div className="mt-16 bg-light-teal dark:bg-purple p-10 rounded-2xl shadow-inner">
             <h3 className="text-2xl font-bold text-center text-light-purple dark:text-light-teal mb-4">
               "When the follow-up is automated, the relationship feels personal
               — and customers come back."
             </h3>
-            <p className="text-center text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+            <p className="text-center text-dark-purple dark:text-gray max-w-2xl mx-auto">
               Thoughtful communication doesn't need to be manual. Skynetrix
               makes sure your shop always follows through.
             </p>
@@ -150,7 +150,7 @@ const FeaturesPage = () => {
       {/* Business Insights Section */}
 
       {/* Future Features + CTA */}
-      <section className="py-20 px-6 bg-[#f7faff] dark:bg-[#2A054A]">
+      <section className="py-20 px-6 bg- dark:bg-[#2A054A]">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-light-purple dark:text-light-teal mb-6">
             Coming Soon to Skynetrix
@@ -165,7 +165,7 @@ const FeaturesPage = () => {
               <h4 className="font-semibold text-light-purple dark:text-light-teal mb-2">
                 Mobile App for Customers
               </h4>
-              <p className="text-sm text-dark-purple dark:text-light-purple">
+              <p className="text-sm text-dark-purple dark:text-gray">
                 Let customers book, view service history, and receive reminders
                 right from their phone.
               </p>
@@ -174,7 +174,7 @@ const FeaturesPage = () => {
               <h4 className="font-semibold text-light-purple dark:text-light-teal mb-2">
                 OBD-II Integration
               </h4>
-              <p className="text-sm text-dark-purple dark:text-light-purple">
+              <p className="text-sm text-dark-purple dark:text-gray">
                 Capture live vehicle data through Bluetooth devices for deeper
                 insights and automation.
               </p>
@@ -183,7 +183,7 @@ const FeaturesPage = () => {
               <h4 className="font-semibold text-light-purple dark:text-light-teal mb-2">
                 Loyalty & Referral Rewards
               </h4>
-              <p className="text-sm text-dark-purple dark:text-light-purple">
+              <p className="text-sm text-dark-purple dark:text-gray">
                 Reward repeat customers and incentivize referrals with built-in
                 rewards tracking.
               </p>
@@ -199,7 +199,7 @@ const FeaturesPage = () => {
             </p>
             <Link
               to="/founders-access"
-              className="inline-block px-10 py-4 rounded-full text-white bg-light-purple dark:bg-light-teal font-bold hover:shadow-neon-teal transition duration-300"
+              className="mt-6 px-10 py-4 font-bold text-lg rounded-full bg-white dark:bg-dark-primary-bg animate-pulse hover:animate-hoverGlow hover:shadow-neon-teal transition duration-300"
             >
               Join the Founder's Club
             </Link>

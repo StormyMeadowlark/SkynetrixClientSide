@@ -28,16 +28,16 @@ const FoundersAccess = () => {
             loading="lazy"
           />
           <h1 className="text-4xl md:text-6xl font-bold text-light-purple dark:text-light-teal">
-            Welcome to Founder's Access
+            Welcome to Founder&apos;s Access
           </h1>
-          <p className="mt-4 text-lg md:text-2xl max-w-3xl mx-auto">
+          <p className="my-8 text-lg md:text-2xl max-w-3xl mx-auto">
             Be the first to shape the future of automotive tech with Skynetrix.
             Founding members get early access, influence roadmap decisions, and
             receive exclusive lifetime perks.
           </p>
           <Link
             to="/founding-members-registration"
-            className="mt-6 inline-block px-10 py-4 rounded-full text-white bg-light-purple dark:bg-light-teal font-bold hover:shadow-neon-teal transition duration-300"
+            className="mt-6 px-10 py-4 font-bold text-lg rounded-full bg-white dark:bg-purple animate-pulse hover:animate-hoverGlow hover:shadow-neon-teal transition duration-300"
           >
             Become a Founding Member
           </Link>
@@ -61,7 +61,7 @@ const FoundersAccess = () => {
         {/* Perks Section */}
         <section>
           <h2 className="text-3xl font-bold text-center text-light-purple dark:text-light-teal mb-6">
-            Founder's Level Benefits
+            Founder&apos;s Level Benefits
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <ul className="text-lg space-y-4 list-disc pl-6">
@@ -97,14 +97,14 @@ const FoundersAccess = () => {
 
         {/* Final CTA */}
         <section className="text-center">
-          <h2 className="text-2xl font-bold mb-2">
+          <h2 className="text-2xl font-bold mb-8">
             Don’t miss your chance to shape the future of shop software.
           </h2>
           <Link
             to="/founding-members-registration"
-            className="mt-4 inline-block px-10 py-4 rounded-full text-white bg-light-purple dark:bg-light-teal font-bold hover:shadow-neon-teal transition duration-300"
+            className="mt-6 px-10 py-4 font-bold text-lg rounded-full bg-white dark:bg-purple animate-pulse hover:animate-hoverGlow hover:shadow-neon-teal transition duration-300"
           >
-            Claim Your Founder's Access
+            Claim Your Founder&apos;s Access
           </Link>
         </section>
       </div>

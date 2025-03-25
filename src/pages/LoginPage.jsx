@@ -1,15 +1,17 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useTheme } from "../context/themeProvider"; // Optional if needed for logo
-import useSEO from "../hooks/useSEO"; // Optional
+import { useTheme } from "../context/themeProvider";
+import useSEO from "../hooks/useSEO";
 import DarkLogo from "../assets/LogoDarkBackground.png";
 import LightLogo from "../assets/LogoLightBackground.png";
+import { Eye, EyeOff } from "lucide-react";
 
 const LoginPage = () => {
   const navigate = useNavigate();
   const { theme } = useTheme();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false); // 👈 for toggle
 
   useSEO({
     title: "Login",
@@ -59,19 +61,28 @@ const LoginPage = () => {
 
           <label className="block">
             <span className="text-sm font-medium">Password</span>
-            <input
-              type="password"
-              required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full mt-1 px-4 py-2 rounded-xl bg-light-primary-bg dark:bg-[#2A054A] text-black dark:text-white border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-light-purple dark:focus:ring-light-teal outline-none"
-              placeholder="••••••••"
-            />
+            <div className="relative">
+              <input
+                type={showPassword ? "text" : "password"}
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full mt-1 px-4 py-2 pr-10 rounded-xl bg-light-primary-bg dark:bg-[#2A054A] text-black dark:text-white border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-light-purple dark:focus:ring-light-teal outline-none"
+                placeholder="••••••••"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword((prev) => !prev)}
+                className="absolute top-1/2 right-2 transform -translate-y-1/2 text-gray-500 dark:text-gray-300"
+              >
+                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+              </button>
+            </div>
           </label>
 
           <button
             type="submit"
-            className="w-full py-3 rounded-xl bg-light-purple dark:bg-light-teal text-white font-bold hover:shadow-neon-teal transition-all duration-300"
+            className="w-full py-3 rounded-xl bg-light-purple dark:bg-light-teal text-white dark:text-dark-primary-bg font-bold hover:shadow-neon-teal transition-all duration-300"
           >
             Log In
           </button>

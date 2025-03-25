@@ -204,7 +204,7 @@ const FoundersAccessRegister = () => {
 
           <button
             type="submit"
-            className="w-full py-3 rounded-xl bg-light-purple dark:bg-light-teal text-white font-bold hover:shadow-neon-teal transition duration-300"
+            className="w-full py-3 rounded-xl bg-light-purple dark:bg-light-teal text-white dark:text-dark-primary-bg font-bold hover:shadow-neon-teal transition duration-300"
           >
             Submit for Review
           </button>
