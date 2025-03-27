@@ -16,7 +16,7 @@ const AboutPage = () => {
   return (
     <main className="bg-light-primary-bg dark:bg-dark-primary-bg text-black dark:text-white pt-16">
       <section className="container mx-auto text-center px-6 py-20">
-        <h1 className="text-4xl md:text-5xl font-bold text-light-purple dark:text-light-teal mb-6">
+        <h1 className="text-4xl md:text-5xl font-bold text-light-purple dark:text-light-teal mb-6 font">
           The Story Behind Skynetrix
         </h1>
         <p className="text-lg max-w-3xl mx-auto mb-12">

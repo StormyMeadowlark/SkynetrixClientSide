@@ -15,6 +15,7 @@ import PricingPage from './pages/PricingPage';
 
 
 
+
 const App = () => (
   <Router>
     <Navbar />
